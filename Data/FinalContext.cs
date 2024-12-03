@@ -15,5 +15,8 @@ namespace Final.Data
         }
 
         public DbSet<Final.Models.TeamMember> TeamMember { get; set; } = default!;
+        public DbSet<Final.Models.FavoriteMovie> FavoriteMovie { get; set; } = default!;
+        public DbSet<Final.Models.Hobby> Hobby { get; set; } = default!;
+        public DbSet<Final.Models.BreakfastItems> BreakfastItems { get; set; } = default!;
     }
 }

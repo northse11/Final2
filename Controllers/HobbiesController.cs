@@ -12,49 +12,56 @@ namespace Final.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TeamMembersController : ControllerBase
+    public class HobbiesController : ControllerBase
     {
         private readonly FinalContext _context;
 
-        public TeamMembersController(FinalContext context)
+        public HobbiesController(FinalContext context)
         {
             _context = context;
         }
 
+        // GET: api/Hobbies
         [HttpGet]
-        public IActionResult GetMember()
+        public IActionResult GetHobbies()
         {
-            return Ok(_context.TeamMember.ToList());
+            return Ok(_context.Hobby.ToList());
         }
 
-        [HttpGet("{id}")]
-        public IActionResult GetTeamMember(int id)
+        //COMMIT THIS ON THURSDAY
+        [HttpGet("{id?}")]
+        public IActionResult GetHobbies(int? id)
         {
-            TeamMember member = _context.TeamMember.Find(id);
-            if (id == 0 || member == null)
+            Hobby hobby = _context.Hobby.Find(id);
+            if (hobby == null || id == 0)// If id is either a 0 or if id doesn't exists in the database
             {
-                var results = _context.TeamMember.Take(5).ToList();
-                return Ok(results);
+                // Return the first five results
+                var firstFiveHobbies = _context.Hobby
+                    .Take(5)
+                    .ToList();
+                return Ok(firstFiveHobbies);
+
             }
             else
             {
-                return Ok(member);
+
+                return Ok(hobby);
+
             }
         }
-
         [HttpPost]
-        public IActionResult PostTeamMember(TeamMember member)
+        public IActionResult PostHobbies(Hobby hobby)
         {
-            _context.TeamMember.Add(member);
+            _context.Hobby.Add(hobby);
             _context.SaveChanges();
             return Ok();
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteTeamMember(int id)
+        public IActionResult DeleteHobby(int id)
         {
-            TeamMember member = _context.TeamMember.Find(id);
-            if (member == null)
+            Hobby hobby = _context.Hobby.Find(id);
+            if (hobby == null)
             {
                 return NotFound();
             }
@@ -62,7 +69,7 @@ namespace Final.Controllers
             {
                 try
                 {
-                    _context.TeamMember.Remove(member);
+                    _context.Hobby.Remove(hobby);
                     _context.SaveChanges();
                 }
                 catch (Exception ex)
@@ -74,11 +81,11 @@ namespace Final.Controllers
         }
 
         [HttpPut]
-        public IActionResult PutTeamMember(TeamMember member)
+        public IActionResult PutHobby(Hobby hobby)
         {
             try
             {
-                _context.Entry(member).State = EntityState.Modified;
+                _context.Entry(hobby).State = EntityState.Modified;
                 _context.SaveChanges();
                 return Ok();
             }
@@ -87,5 +94,10 @@ namespace Final.Controllers
                 return NotFound();
             }
         }
+
+
+
+
+
     }
 }

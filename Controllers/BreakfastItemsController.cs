@@ -12,49 +12,55 @@ namespace Final.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TeamMembersController : ControllerBase
+    public class BreakfastItemsController : ControllerBase
     {
         private readonly FinalContext _context;
 
-        public TeamMembersController(FinalContext context)
+        public BreakfastItemsController(FinalContext context)
         {
             _context = context;
         }
-
+        // GET: api/BreakfastItems
         [HttpGet]
-        public IActionResult GetMember()
+        public IActionResult GetBreakfastItems()
         {
-            return Ok(_context.TeamMember.ToList());
+            return Ok(_context.BreakfastItems.ToList());
         }
 
-        [HttpGet("{id}")]
-        public IActionResult GetTeamMember(int id)
+
+        [HttpGet("{id?}")]
+        public IActionResult GetBreakfastItems(int? id)
         {
-            TeamMember member = _context.TeamMember.Find(id);
-            if (id == 0 || member == null)
+            BreakfastItems breakfast = _context.BreakfastItems.Find(id);
+            if (breakfast == null || id == 0)// If id is either a 0 or if id doesn't exists in the database
             {
-                var results = _context.TeamMember.Take(5).ToList();
-                return Ok(results);
+                // Return the first five results
+                var firstFiveBreakfastItems = _context.BreakfastItems
+                    .Take(5)
+                    .ToList();
+                return Ok(firstFiveBreakfastItems);
+
             }
             else
             {
-                return Ok(member);
+
+                return Ok(breakfast);
+
             }
         }
-
         [HttpPost]
-        public IActionResult PostTeamMember(TeamMember member)
+        public IActionResult PostBreakfastItems(BreakfastItems breakfast)
         {
-            _context.TeamMember.Add(member);
+            _context.BreakfastItems.Add(breakfast);
             _context.SaveChanges();
             return Ok();
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteTeamMember(int id)
+        public IActionResult DeleteBreakfastItems(int id)
         {
-            TeamMember member = _context.TeamMember.Find(id);
-            if (member == null)
+            BreakfastItems breakfast = _context.BreakfastItems.Find(id);
+            if (breakfast == null)
             {
                 return NotFound();
             }
@@ -62,7 +68,7 @@ namespace Final.Controllers
             {
                 try
                 {
-                    _context.TeamMember.Remove(member);
+                    _context.BreakfastItems.Remove(breakfast);
                     _context.SaveChanges();
                 }
                 catch (Exception ex)
@@ -74,11 +80,11 @@ namespace Final.Controllers
         }
 
         [HttpPut]
-        public IActionResult PutTeamMember(TeamMember member)
+        public IActionResult PutBreakfastItems(BreakfastItems breakfast)
         {
             try
             {
-                _context.Entry(member).State = EntityState.Modified;
+                _context.Entry(breakfast).State = EntityState.Modified;
                 _context.SaveChanges();
                 return Ok();
             }
@@ -87,5 +93,7 @@ namespace Final.Controllers
                 return NotFound();
             }
         }
+
+
     }
 }

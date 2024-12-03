@@ -1,4 +1,4 @@
-﻿namespace FinalProject.Models
+﻿namespace Final.Models
 {
     public class FavoriteMovie
     {
