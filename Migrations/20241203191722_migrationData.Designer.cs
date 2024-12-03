@@ -4,6 +4,7 @@ using Final.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Final.Migrations
 {
     [DbContext(typeof(FinalContext))]
-    partial class FinalContextModelSnapshot : ModelSnapshot
+    [Migration("20241203191722_migrationData")]
+    partial class migrationData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,53 +53,6 @@ namespace Final.Migrations
                     b.HasKey("breakfastID");
 
                     b.ToTable("BreakfastItems");
-
-                    b.HasData(
-                        new
-                        {
-                            breakfastID = 1,
-                            breakfastItemDescription = "Chocolate Chip Waffles and Syrup",
-                            breakfastItemName = "Waffles",
-                            breakfastItemPrice = 10,
-                            breakfastItemQuantity = 2,
-                            breakfastTime = new DateTime(2024, 10, 24, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            breakfastID = 2,
-                            breakfastItemDescription = "God's Gift to the World",
-                            breakfastItemName = "Bacon Cheese McGriddle",
-                            breakfastItemPrice = 4,
-                            breakfastItemQuantity = 2,
-                            breakfastTime = new DateTime(2024, 12, 6, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            breakfastID = 3,
-                            breakfastItemDescription = "test",
-                            breakfastItemName = "test",
-                            breakfastItemPrice = 1,
-                            breakfastItemQuantity = 1,
-                            breakfastTime = new DateTime(2024, 10, 24, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            breakfastID = 4,
-                            breakfastItemDescription = "test",
-                            breakfastItemName = "test",
-                            breakfastItemPrice = 1,
-                            breakfastItemQuantity = 1,
-                            breakfastTime = new DateTime(2024, 10, 24, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            breakfastID = 5,
-                            breakfastItemDescription = "test",
-                            breakfastItemName = "test",
-                            breakfastItemPrice = 1,
-                            breakfastItemQuantity = 1,
-                            breakfastTime = new DateTime(2024, 10, 24, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("Final.Models.FavoriteMovie", b =>
@@ -165,15 +121,6 @@ namespace Final.Migrations
                             Rating = 8.5,
                             ReleaseDate = new DateTime(2024, 10, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Smile 2"
-                        },
-                        new
-                        {
-                            ID = 5,
-                            Director = "test",
-                            Genre = "test",
-                            Rating = 8.5,
-                            ReleaseDate = new DateTime(2024, 10, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "test"
                         });
                 });
 
@@ -228,13 +175,6 @@ namespace Final.Migrations
                             Artist = "Black Out The Sun",
                             SongName = "Wildfire",
                             TeamMemberID = 5
-                        },
-                        new
-                        {
-                            FavoriteSongID = 5,
-                            Artist = "test",
-                            SongName = "test",
-                            TeamMemberID = 3
                         });
                 });
 
@@ -275,7 +215,7 @@ namespace Final.Migrations
                             HobbyActive = true,
                             HobbyAge = new DateTime(2015, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             HobbyDescription = "Hobby....",
-                            HobbyDifficulty = "test",
+                            HobbyDifficulty = "Medium",
                             HobbyName = "Hobby"
                         },
                         new
@@ -304,15 +244,6 @@ namespace Final.Migrations
                             HobbyDescription = "Playing classical piano music",
                             HobbyDifficulty = "Medium",
                             HobbyName = "Playing Piano"
-                        },
-                        new
-                        {
-                            HobbyID = 5,
-                            HobbyActive = true,
-                            HobbyAge = new DateTime(2010, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            HobbyDescription = "hobby...",
-                            HobbyDifficulty = "test",
-                            HobbyName = "hobby"
                         });
                 });
 

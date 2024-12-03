@@ -8,6 +8,14 @@
         public string Artist { get; set; }
 
         // Navigation property
-        public TeamMember TeamMember { get; set; }
+        public FavoriteSong() { }
+
+        public FavoriteSong (int id, int memberId, string songName, string artist)
+        {
+            FavoriteSongID = id;
+            TeamMemberID = memberId;
+            SongName = songName;
+            Artist = artist;
+        }
     }
 }
