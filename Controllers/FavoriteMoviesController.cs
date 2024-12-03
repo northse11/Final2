@@ -1,22 +1,22 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using FinalProject.Data;
-using FinalProject.Models;
+using Final.Data;
+using Final.Models;
 
-namespace FinalProject.Controllers
+namespace Final.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class FavoriteMoviesController : ControllerBase
     {
-        private readonly FinalProjectContext _context;
+        private readonly FinalContext _context;
 
-        public FavoriteMoviesController(FinalProjectContext context)
+        public FavoriteMoviesController(FinalContext context)
         {
             _context = context;
         }
