@@ -52,7 +52,7 @@ namespace Final.Data
                 new BreakfastItems { breakfastID = 1, breakfastItemName = "Waffles", breakfastItemDescription = "Chocolate Chip Waffles and Syrup", breakfastItemPrice = 10, breakfastItemQuantity = 2, breakfastTime = new DateTime(2024, 10, 24) },
                 new BreakfastItems { breakfastID = 2, breakfastItemName = "Bacon Cheese McGriddle", breakfastItemDescription = "God's Gift to the World", breakfastItemPrice = 4, breakfastItemQuantity = 2, breakfastTime = new DateTime(2024, 12, 06) },
                 new BreakfastItems { breakfastID = 3, breakfastItemName = "test", breakfastItemDescription = "test", breakfastItemPrice = 1, breakfastItemQuantity = 1, breakfastTime = new DateTime(2024, 10, 24) },
-                new BreakfastItems { breakfastID = 4, breakfastItemName = "test", breakfastItemDescription = "test", breakfastItemPrice = 1, breakfastItemQuantity = 1, breakfastTime = new DateTime(2024, 10, 24) },
+                new BreakfastItems { breakfastID = 4, breakfastItemName = "Pancake", breakfastItemDescription = "Flat", breakfastItemPrice = 1, breakfastItemQuantity = 5, breakfastTime = new DateTime(2024, 10, 24) },
                 new BreakfastItems { breakfastID = 5, breakfastItemName = "test", breakfastItemDescription = "test", breakfastItemPrice = 1, breakfastItemQuantity = 1, breakfastTime = new DateTime(2024, 10, 24) }
                );
         }
