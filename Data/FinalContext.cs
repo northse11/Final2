@@ -27,11 +27,11 @@ namespace Final.Data
                 );
 
             modelBuilder.Entity<Hobby>().HasData(
-                new Hobby { HobbyID = 1, HobbyName = "Hobby", HobbyDescription = "Hobby....", HobbyAge = new DateTime(2015, 12, 31), HobbyActive = true, HobbyDifficulty = "test" },
+                new Hobby { HobbyID = 1, HobbyName = "Gaming", HobbyDescription = "Playing video games on a pc", HobbyAge = new DateTime(2014, 08, 15), HobbyActive = true, HobbyDifficulty = "Easy" },
                 new Hobby { HobbyID = 2, HobbyName = "Marching Band", HobbyDescription = "Playing the trumpet for the University of Cincinnati Marching Band.", HobbyAge = new DateTime(2022, 8, 01), HobbyActive = true, HobbyDifficulty = "Medium" },
                 new Hobby { HobbyID = 3, HobbyName = "Cooking", HobbyDescription = "Learning new recipes and cooking new foods", HobbyAge = new DateTime(2020, 10, 10), HobbyActive = true, HobbyDifficulty = "Medium" },
                 new Hobby { HobbyID = 4, HobbyName = "Playing Piano", HobbyDescription = "Playing classical piano music", HobbyAge = new DateTime(2010, 01, 10), HobbyActive = false, HobbyDifficulty = "Medium" },
-                new Hobby { HobbyID = 5, HobbyName = "hobby", HobbyDescription = "hobby...", HobbyAge = new DateTime(2010, 01, 10), HobbyActive = true, HobbyDifficulty = "test" }
+                new Hobby { HobbyID = 5, HobbyName = "Golf", HobbyDescription = "Playing golf and trying to lower my score", HobbyAge = new DateTime(2016, 04, 10), HobbyActive = true, HobbyDifficulty = "Medium" }
                 );
 
             modelBuilder.Entity<FavoriteSong>().HasData(
@@ -39,21 +39,21 @@ namespace Final.Data
                 new FavoriteSong { FavoriteSongID = 2, TeamMemberID = 2, SongName = "Invisible", Artist = "Duran Duran" },
                 new FavoriteSong { FavoriteSongID = 3, TeamMemberID = 1, SongName = "Lyin' Eyes", Artist = "Eagles" },
                 new FavoriteSong { FavoriteSongID = 4, TeamMemberID = 5, SongName = "Wildfire", Artist = "Black Out The Sun" },
-                new FavoriteSong { FavoriteSongID = 5, TeamMemberID = 3, SongName = "test", Artist = "test" }
+                new FavoriteSong { FavoriteSongID = 5, TeamMemberID = 3, SongName = "Could You be Loved", Artist = "Bob Marley" }
                 );
             modelBuilder.Entity<FavoriteMovie>().HasData(
                 new FavoriteMovie { ID = 1, Title = "Inception", Director = "Christopher Nolan", ReleaseDate = new DateTime(2010, 7, 16), Genre = "Sci-Fi", Rating = 8.8 },
                 new FavoriteMovie { ID = 2, Title = "Star Wars: Episode V - The Empire Strikes Back", Director = "Irvin Kershner", ReleaseDate = new DateTime(1980, 5, 06), Genre = "Sci-Fi", Rating = 8.7 },
                 new FavoriteMovie { ID = 3, Title = "Signs", Director = "M Night Shyamalan", ReleaseDate = new DateTime(2002, 08, 02), Genre = "Sci-Fi", Rating = 10 },
                 new FavoriteMovie { ID = 4, Title = "Smile 2", Director = "Parker Finn", ReleaseDate = new DateTime(2024, 10, 24), Genre = "Horror", Rating = 8.5 },
-                new FavoriteMovie { ID = 5, Title = "test", Director = "test", ReleaseDate = new DateTime(2024, 10, 24), Genre = "test", Rating = 8.5 }
+                new FavoriteMovie { ID = 5, Title = "Borat", Director = "Larry Charles", ReleaseDate = new DateTime(2006, 11, 03), Genre = "Comedy", Rating = 9 }
                 );
             modelBuilder.Entity<BreakfastItems>().HasData(
                 new BreakfastItems { breakfastID = 1, breakfastItemName = "Waffles", breakfastItemDescription = "Chocolate Chip Waffles and Syrup", breakfastItemPrice = 10, breakfastItemQuantity = 2, breakfastTime = new DateTime(2024, 10, 24) },
                 new BreakfastItems { breakfastID = 2, breakfastItemName = "Bacon Cheese McGriddle", breakfastItemDescription = "God's Gift to the World", breakfastItemPrice = 4, breakfastItemQuantity = 2, breakfastTime = new DateTime(2024, 12, 06) },
-                new BreakfastItems { breakfastID = 3, breakfastItemName = "test", breakfastItemDescription = "test", breakfastItemPrice = 1, breakfastItemQuantity = 1, breakfastTime = new DateTime(2024, 10, 24) },
+                new BreakfastItems { breakfastID = 3, breakfastItemName = "Eggs", breakfastItemDescription = "Scrambled eggs", breakfastItemPrice = 2, breakfastItemQuantity = 2, breakfastTime = new DateTime(2024, 10, 24) },
                 new BreakfastItems { breakfastID = 4, breakfastItemName = "Pancake", breakfastItemDescription = "Flat", breakfastItemPrice = 1, breakfastItemQuantity = 5, breakfastTime = new DateTime(2024, 10, 24) },
-                new BreakfastItems { breakfastID = 5, breakfastItemName = "test", breakfastItemDescription = "test", breakfastItemPrice = 1, breakfastItemQuantity = 1, breakfastTime = new DateTime(2024, 10, 24) }
+                new BreakfastItems { breakfastID = 5, breakfastItemName = "Sausage", breakfastItemDescription = "Maple flavored sausage links", breakfastItemPrice = 3, breakfastItemQuantity = 5, breakfastTime = new DateTime(2020, 10, 24) }
                );
         }
 
